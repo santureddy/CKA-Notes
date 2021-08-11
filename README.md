@@ -59,5 +59,7 @@ This is my personal notes from the Kodekloud course <https://kodekloud.com/cours
 - Within K8 cluster, every pod can reach every other pod. This is accomplished by deploying POD network solution ( an internal virtual network that spans across all nodes in clsuter ). Ideally we create **service** for each applications running in cluster withing pods which live outside the node and withing cluster. Service is a virtual component which lives in K8's memory.
 - Kube-proxy is a process which runs in each node in k8's cluster. It looks out for new services and every time a new service is created it creates appropriate rules on each node to forward traffic to those services to the backend pods. One way it does this is using IP tables rules. It creates IP table rules in each node on the cluster.
 - kube-proxy.service is the config file. Using kubeadm , it deploys kube-proxy as pods ( daemon sets to be specific ) on each node.
+
 > kubectl get pods -n kubes-system | grep kube-proxy
+
 > kubectl get daemonset -n kube-system
